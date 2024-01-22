@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  background-color: #ded4cc;
+}
+
+/* Style the side navigation */
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #30292F;
+  overflow-x: hidden;
+}
+
+
+/* Side navigation links */
+.sidenav a {
+  color: #ded4cc;
+  padding: 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color on hover */
+.sidenav a:hover {
+  background-color: #bfa8a3;
+  color: #30292F;
+}
+
+/* Style the content */
+.content {
+  margin-left: 200px;
+  padding-left: 20px;
+  background-color: #ded4cc;
+  color: #30292F;
+}
+
+img {
+  max-width: 75%;
+  height: auto
+}

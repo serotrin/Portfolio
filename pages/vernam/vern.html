@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <script
+    src="verna.js">
+  </script>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vernam Cipher</title>
+  <a href="../../index.html">return</a>
+</head>
+
+<body>
+  <h1>
+    Vernam Cipher
+  </h1>
+
+  <div>
+    Enter your phrase:
+    <input type="text" id="inputPhrase" placeholder="Type your phrase here">
+  </div>
+
+  <button onclick="processPhrase()">Encrypt and Decrypt</button>
+
+  <div>
+    <h3>Key:</h3>
+    <p id="key"></p>
+  </div>
+
+  <div>
+    <h3>Encrypted Result:</h3>
+    <p id="encrypted"></p>
+  </div>
+
+  <div>
+    <h3>Decrypted Result:</h3>
+    <p id="decrypted"></p>
+  </div>
+
+  <script>
+    function generate_key(plaintext_length) {
+      var key = '';
+      var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      for (var i = 0; i < plaintext_length; i++) {
+        key += characters.charAt(Math.floor(Math.random() * characters.length));
+      }
+      return key;
+    }
+
+    function encrypt(plaintext, key) {
+      var ciphertext = '';
+      for (var i = 0; i < plaintext.length; i++) {
+        ciphertext += String.fromCharCode(plaintext.charCodeAt(i) ^ key.charCodeAt(i));
+      }
+      return btoa(ciphertext);
+    }
+
+    function decrypt(ciphertext, key) {
+      var decrypted_text = '';
+      ciphertext = atob(ciphertext);
+      for (var i = 0; i < ciphertext.length; i++) {
+        decrypted_text += String.fromCharCode(ciphertext.charCodeAt(i) ^ key.charCodeAt(i));
+      }
+      return decrypted_text;
+    }
+
+    function processPhrase() {
+      var plaintext = document.getElementById('inputPhrase').value;
+
+      var key = generate_key(plaintext.length);
+      document.getElementById('key').textContent = key;
+
+      var ciphertext = encrypt(plaintext, key);
+      document.getElementById('encrypted').textContent = ciphertext;
+
+      var decryptedPhrase = decrypt(ciphertext, key);
+      document.getElementById('decrypted').textContent = decryptedPhrase;
+    }
+  </script>
+
+</body>
+
+</html>

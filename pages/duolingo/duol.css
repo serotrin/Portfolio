@@ -1,0 +1,53 @@
+/* Style navigation bar */
+@import url("https://design.duolingo.com/identity/typography#din-next-rounded")
+
+
+.navbar.na {
+  background-color: rgba(0, 0, 0, 0.8); /* Dark background color */
+  padding: 10px 0;
+}
+
+.duolingofont {
+  font-family: din-next-rounded;
+}
+
+aside {
+  width: 40%;
+  padding-left: 20px;
+  margin-left: 20px;
+  float: right;
+}
+
+/* .navbar .nav-link {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+} */
+
+/* Style for the background image */
+body {
+  background-image: url('background_image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Style for centered text */
+.centered-text {
+  text-align: center;
+  padding: 100px; /* Adjust as needed */
+  background-color: rgba(255, 255, 255, 0.7); /* Background color with opacity */
+}
+
+span {
+  font-size: 8px;
+}
+
+.float {
+  float: right;
+}
+
+.container {
+  max-width: 1140px;
+}
